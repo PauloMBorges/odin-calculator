@@ -1,4 +1,7 @@
 let displayValue = '0';
+let firstOperand = null;
+let secondOperand = null;
+let currentOperation = null;
 
 const display = document.getElementById("display");
 
