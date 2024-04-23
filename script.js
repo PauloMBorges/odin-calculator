@@ -1,3 +1,7 @@
+let displayValue = 0;
+
+const display = document.getElementById("display");
+
 function add(a, b) {
     return a + b;
 }
@@ -31,3 +35,9 @@ function operate(a, b, op) {
             return null;
     }
 }
+
+function updateDisplay() {
+    display.innerText = displayValue; 
+}
+
+updateDisplay();
