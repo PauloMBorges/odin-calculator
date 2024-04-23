@@ -1,4 +1,4 @@
-let displayValue = 0;
+let displayValue = '0';
 
 const display = document.getElementById("display");
 
@@ -37,11 +37,12 @@ function operate(a, b, op) {
 }
 
 function updateDisplay() {
-    display.textContent += displayValue; 
+    display.textContent = displayValue; 
 }
 
 updateDisplay();
 
 function clearDisplay() {
-    display.textContent = '';
+    displayValue = '';
+    updateDisplay();
 }
