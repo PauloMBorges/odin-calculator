@@ -67,6 +67,9 @@ function populateOperand(operand) {
 // This function saves the first operand and the operation to be performed, then clears the display for the next input
 // Operator is a parameter so that when the desired operator button is clicked, an event listener will call the function with it
 function setOperation(operator) {
+    if (currentOperation !== null) {
+        doOperation(); // If an operator is already set, compute the result first
+    }
     firstOperand = displayValue; // Save the current display value (1st operand)
     currentOperation = operator; // Save operator 
     displayValue = ''; // Clear the display value for next number
