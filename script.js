@@ -26,18 +26,24 @@ function divide(a, b) {
 function operate(a, b, op) {
     a = Number(a);
     b = Number(b);
+    let result;
     switch(op) {
         case '+':
-            return add(a, b);
+            result = add(a, b);
+            break;
         case '-':
-            return subtract(a, b);
+            result = subtract(a, b);
+            break;
         case '*':
-            return multiply(a, b);
+            result = multiply(a, b);
+            break;
         case '/':
-            return divide(a, b);
+            result = divide(a, b);
+            break;
         default:
-            return null;
+            return null; 
     }
+    return Number(result.toFixed(5));
 }
 
 function updateDisplay() {
