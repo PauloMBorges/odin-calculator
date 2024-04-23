@@ -2,6 +2,7 @@ let displayValue = '0';
 let firstOperand = null;
 let secondOperand = null;
 let currentOperation = null;
+let isResultDisplayed = false; // Flag to track if the result is being displayed
 
 const display = document.getElementById("display");
 
@@ -54,6 +55,9 @@ function clearDisplay() {
 }
 
 function populateOperand(operand) {
+    if (isResultDisplayed) {
+        clearDisplay(); // clears the display and stored values if a result is being displayed and the user clicks another operand button
+    }
     if (displayValue === '0' && operand === '0') {
         return;
     } else if (displayValue === '0' && operand !== '0') {
@@ -73,6 +77,7 @@ function setOperation(operator) {
     firstOperand = displayValue; // Save the current display value (1st operand)
     currentOperation = operator; // Save operator 
     displayValue = ''; // Clear the display value for next number
+    isResultDisplayed = false; // Reset the flag
 }
 
 // When the "=" button is clicked, this function calculates the result using the stored operator and operands, then updates the display.
@@ -80,6 +85,7 @@ function doOperation() {
     secondOperand = displayValue;
     displayValue = operate(firstOperand, secondOperand, currentOperation);
     currentOperation = null;
+    isResultDisplayed = true;
     updateDisplay();
 }
 
