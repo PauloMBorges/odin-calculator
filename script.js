@@ -105,7 +105,16 @@ function setOperation(operator) {
 
 // When the "=" button is clicked, this function calculates the result using the stored operator and operands, then updates the display.
 function doOperation() {
-    secondOperand = displayValue;
+    if (!currentOperation) return // Exit if '=' is clicked without an operation set
+
+    // if no second operand is set, secondOperand = firstOperand (works the same as iphone's calculator)
+    if(displayValue === '') {
+        secondOperand = firstOperand;
+    // else, stores the displayValue to secondOperand and proceds to the operation normally
+    } else {
+        secondOperand = displayValue;
+    }
+
     displayValue = operate(firstOperand, secondOperand, currentOperation);
     currentOperation = null;
     isResultDisplayed = true;
