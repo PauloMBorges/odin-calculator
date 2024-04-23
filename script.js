@@ -47,17 +47,9 @@ updateDisplay();
 
 function clearDisplay() {
     displayValue = '0';
-    updateDisplay();
-}
-
-function populateOperand(operand) {
-    if (displayValue === '0' && operand === '0') {
-        return;
-    } else if (displayValue === '0' && operand !== '0') {
-        displayValue = operand;
-    } else {
-        displayValue += operand;
-    }
+    firstOperand = null;
+    secondOperand = null;
+    currentOperation = null;
     updateDisplay();
 }
 
@@ -67,3 +59,4 @@ document.querySelector('.clear').addEventListener('click', clearDisplay);
 document.querySelectorAll('.operand').forEach(button => {
     button.addEventListener('click', () => populateOperand(button.textContent));
 });
+
