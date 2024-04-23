@@ -56,14 +56,37 @@ function clearDisplay() {
 
 function populateOperand(operand) {
     if (isResultDisplayed) {
-        clearDisplay(); // clears the display and stored values if a result is being displayed and the user clicks another operand button
+        if (operand === '.') {
+            displayValue = '0.'; // Start with "0." if result is displayed and '.' is clicked
+        } else {
+            clearDisplay();
+            displayValue = operand; // Start fresh with the new number if a result is displayed
+        }
+        isResultDisplayed = false; // Reset the flag since new input begins
+        updateDisplay();
+        return; // Exit to avoid appending additional characters in this transaction
     }
-    if (displayValue === '0' && operand === '0') {
-        return;
-    } else if (displayValue === '0' && operand !== '0') {
-        displayValue = operand; 
+    
+    // Decimal point logic
+    if (operand === '.') {
+        if (displayValue.includes('.')) {
+            return; // Prevent adding more than one decimal point
+        }
+        if (displayValue === '') {
+            displayValue = '0.'; // Start with "0." if display is empty
+        } else if (!displayValue.includes('.')) {
+            displayValue += '.'; // Only add decimal if there isn't one already
+        }
     } else {
-        displayValue += operand;
+        if (displayValue === '0' && operand === '0') {
+            return; // Prevent multiple leading zeroes
+        } else if (displayValue === '0.' && operand !== '0') {
+            displayValue += operand; // Append number to "0."
+        } else if (displayValue === '0' && operand !== '0') {
+            displayValue = operand; // Replace leading zero if no decimal has been added
+        } else {
+            displayValue += operand; // Append number
+        }
     }
     updateDisplay();
 }
