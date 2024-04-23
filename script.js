@@ -37,7 +37,11 @@ function operate(a, b, op) {
 }
 
 function updateDisplay() {
-    display.innerText = displayValue; 
+    display.textContent += displayValue; 
 }
 
 updateDisplay();
+
+function clearDisplay() {
+    display.textContent = '';
+}
