@@ -43,6 +43,8 @@ function updateDisplay() {
 updateDisplay();
 
 function clearDisplay() {
-    displayValue = '';
+    displayValue = '0';
     updateDisplay();
 }
+
+document.querySelector('.clear').addEventListener('click', clearDisplay);
