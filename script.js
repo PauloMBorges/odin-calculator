@@ -64,9 +64,29 @@ function populateOperand(operand) {
     updateDisplay();
 }
 
+// This function saves the first operand and the operation to be performed, then clears the display for the next input
+// Operator is a parameter so that when the desired operator button is clicked, an event listener will call the function with it
+function setOperation(operator) {
+    firstOperand = displayValue; // Save the current display value (1st operand)
+    currentOperation = operator; // Save operator 
+    displayValue = ''; // Clear the display value for next number
+}
+
+// When the "=" button is clicked, this function calculates the result using the stored operator and operands, then updates the display.
+function doOperation() {
+    secondOperand = displayValue;
+    displayValue = operate(firstOperand, secondOperand, currentOperation);
+    currentOperation = null;
+    updateDisplay();
+}
+
+
 // Event Listeners
 document.querySelector('.clear').addEventListener('click', clearDisplay);
 document.querySelectorAll('.operand').forEach(button => {
     button.addEventListener('click', () => populateOperand(button.textContent));
 });
-
+document.querySelectorAll('.operator').forEach(button => {
+    button.addEventListener('click', () => setOperation(button.textContent))
+});
+document.querySelector('.equals').addEventListener('click', doOperation);
