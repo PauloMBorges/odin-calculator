@@ -12,6 +12,12 @@ body {
     justify-content: center;
 }
 
+.title {
+    font-size: 48px;
+    font-weight: bolder;
+    color: #C5001A; /* bright red */
+}
+
 /* CALCULATOR */
 
 .calculator-container {
@@ -34,6 +40,7 @@ body {
     width: 100%;
     gap: 20px;
     padding: 10px;
+    color: #408EC6; /* royal blue */
 }
 
 .credits {
