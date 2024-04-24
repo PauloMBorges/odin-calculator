@@ -1,7 +1,12 @@
+
+/* HEADER */
+
 .header {
     display: flex;
     justify-content: center;
 }
+
+/* CALCULATOR */
 
 .calculator-container {
     display: flex;
@@ -9,14 +14,31 @@
     align-items: center;
 }
 
+#display {
+}
+/* FOOTER */
+
 .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.credits {
+    font-size: 18px;
 }
 
 .github-logo,
 .top-logo {
     width: 30px;
     height: auto;
+}
+
+a {
+    text-decoration: none;
 }
