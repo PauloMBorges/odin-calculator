@@ -43,6 +43,7 @@ function operate(a, b, op) {
         default:
             return null; 
     }
+
     return Number(result.toFixed(5));
 }
 
