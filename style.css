@@ -9,3 +9,14 @@
     align-items: center;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-logo,
+.top-logo {
+    width: 30px;
+    height: auto;
+}
