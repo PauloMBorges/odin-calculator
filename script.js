@@ -44,7 +44,13 @@ function operate(a, b, op) {
             return null; 
     }
 
-    return Number(result.toFixed(5));
+     // Check if the result is a number before calling toFixed
+    if (typeof result === "number") {
+        return Number(result.toFixed(5));
+    } else {
+        // If result is not a number, just return it (in case of "Math ERROR")
+        return result;
+    }
 }
 
 function updateDisplay() {
