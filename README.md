@@ -16,7 +16,7 @@ This project is the capstone of The Odin Project's Foundations course. The Odin 
 - CSS 
 - Vanilla JavaScript 
 
-## Live Demo
+## Website Link
 
-[Live Demo Link](https://paulomborges.github.io/odin-calculator/)
+Visit the live website [here](https://paulomborges.github.io/odin-calculator/)
 
