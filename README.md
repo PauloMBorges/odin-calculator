@@ -1,7 +1,7 @@
 # Odin Calculator
+![image](https://github.com/PauloMBorges/odin-calculator/assets/106917891/21f6f826-60b4-45f1-8ccc-289b59efa962)
 
 This project is the capstone of The Odin Project's Foundations course. The Odin Calculator is a simple, web-based application that provides users with basic arithmetic functions in a clean and intuitive interface.
-
 
 ## Features
 
